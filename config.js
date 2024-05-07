@@ -1,6 +1,8 @@
 class Config {
     constructor() {
         this.channels = new Map();
+        this.regions = new Map();
+        this.lastUpdate = "";
     }
 
     // load the correct channel whenever joining a new guild

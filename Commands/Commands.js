@@ -1,5 +1,7 @@
 import { GetHistory } from '../Stepmania/Stepmaniax.js';
-import { historyEmbed } from './Embeds.js';
+import { historyEmbed, scoreFeedEmbed } from './Embeds.js';
+import scoreFeedElement from '../Stepmania/Classes/ScoreFeedElement.js';
+import config from '../config.js';
 
 /** command types:
  * 1: SUB_COMMAND
@@ -14,10 +16,6 @@ import { historyEmbed } from './Embeds.js';
  * 10: NUMBER
  * 11: ATTACHMENT
  */
-
-
-// to store what region the user wants to check
-let regions = new Map();
 
 
 export const commands = [
@@ -104,12 +102,37 @@ export const commands = [
 
 export async function handleCommand(command){
     switch (command.commandName) {
+        
+        
         case 'updatehistory':
-            // updateHistory();
-            console.log("updating");
-            await command.reply({embeds: [historyEmbed]});
-            // GetHistory();
+           
+
+            let historyJson = await GetHistory();
+            let embeds = [];
+
+            if (historyJson) {
+                for (let index = 0; (index < historyJson.history.length) && (embeds.length < 10); index++) {
+
+                    let scorefeed = new scoreFeedElement();
+                    scorefeed.parseJsonToValues(historyJson, index); 
+                    
+                    // if last printed scorefeed is the current scorefeed: stop
+                    if (config.lastUpdate && config.lastUpdate === scorefeed.created_at)
+                        break;
+                    else 
+                        embeds.push(scoreFeedEmbed(scorefeed));                   
+                }
+
+                if (embeds.length > 0){
+                    await command.reply({embeds: embeds});
+                    config.lastUpdate = historyJson.history[0].created_at;
+                }
+            }
             break;
+
+
+
+
         // case 'addtask':
         //     const task = ir.options.getString('task');
         //     addtask(ir, task);

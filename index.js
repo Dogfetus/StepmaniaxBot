@@ -31,6 +31,7 @@ client.on('interactionCreate', async (ir) => {
 
     try{
 
+        // handle any incomming commmands
         await handleCommand(ir);
         
         try {
