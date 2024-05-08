@@ -1,7 +1,7 @@
 import { GetHistory } from '../Stepmania/Stepmaniax.js';
 import { historyEmbed, scoreFeedEmbed } from './Embeds.js';
 import scoreFeedElement from '../Stepmania/Classes/ScoreFeedElement.js';
-import config from '../config.js';
+import register from '../config.js';
 
 /** command types:
  * 1: SUB_COMMAND
@@ -106,28 +106,6 @@ export async function handleCommand(command){
         
         case 'updatehistory':
            
-
-            let historyJson = await GetHistory();
-            let embeds = [];
-
-            if (historyJson) {
-                for (let index = 0; (index < historyJson.history.length) && (embeds.length < 10); index++) {
-
-                    let scorefeed = new scoreFeedElement();
-                    scorefeed.parseJsonToValues(historyJson, index); 
-                    
-                    // if last printed scorefeed is the current scorefeed: stop
-                    if (config.lastUpdate && config.lastUpdate === scorefeed.created_at)
-                        break;
-                    else 
-                        embeds.push(scoreFeedEmbed(scorefeed));                   
-                }
-
-                if (embeds.length > 0){
-                    await command.reply({embeds: embeds});
-                    config.lastUpdate = historyJson.history[0].created_at;
-                }
-            }
             break;
 
 
