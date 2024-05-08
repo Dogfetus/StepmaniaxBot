@@ -13,7 +13,7 @@ export default async function startInterval(client, time) {
     let embeds = [];
     
     console.log("sending: " + time);
-
+    // console.log(historyJson);
 
 
     // loops through the json data from stempaniax and creates an embed for each entry (stops at 10 entries)
@@ -21,9 +21,10 @@ export default async function startInterval(client, time) {
             let scorefeed = new scoreFeedElement();
             scorefeed.parseJsonToValues(historyJson, index); 
 
-            if (lastUpdate && iso8061ToEpoch(lastUpdate) >= iso8061ToEpoch(scorefeed.created_at))
+            if (lastUpdate                                                                      // last update exists
+                && iso8061ToEpoch(lastUpdate) >= iso8061ToEpoch(scorefeed.created_at))           // last update is newer than the current scorefeed
                 break;
-            else 
+            else if (scorefeed.user.country == "NO")                                              // the scorefeed is from Norway            )
                 embeds.push(scoreFeedEmbed(scorefeed));
     }
 

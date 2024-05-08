@@ -1,6 +1,3 @@
-import { GetHistory } from '../Stepmania/Stepmaniax.js';
-import { historyEmbed, scoreFeedEmbed } from './Embeds.js';
-import scoreFeedElement from '../Stepmania/Classes/ScoreFeedElement.js';
 import register from '../config.js';
 
 /** command types:
@@ -33,30 +30,26 @@ export const commands = [
             }
         ]
     },
-    // {
-    //     name: 'addtask',
-    //     description: 'Adds a task to the to-do list',
-    //     options: [
-    //         {
-    //             name: 'task',
-    //             description: 'The task to add',
-    //             type: 3,
-    //             required: true
-    //         }
-    //     ]
-    // },
-    // {
-    //     name: 'selectlist',
-    //     description: 'Selects a list to modify',
-    //     options: [
-    //         {
-    //             name: 'listid',
-    //             description: 'The id of the list',
-    //             type: 3,
-    //             required: true
-    //         }
-    //     ]
-    // },
+    {
+        name: 'disable',
+        description: 'Disable the bot in the server',
+    },
+    {
+        name: 'enable',
+        description: 'Enable the bot in the server',
+    },
+    {
+        name: 'region',
+        description: 'change region using ISO 3166-1 alpha-2 format',
+        options: [
+            {
+                name: 'region',
+                description: 'The region to change to in ISO 3166-1 alpha-2 format',
+                type: 3,
+                required: true
+            }
+        ]
+    }
     // {
     //     name: 'removetask',
     //     description: 'Deletes a task from the to-do list',
@@ -111,7 +104,18 @@ export async function handleCommand(command){
             break;
 
 
+        case 'disable':
+            register.get(command.guildId).enabled = false;
+            break;
+        
+        
+        case 'enable':
+            register.get(command.guildId).enabled = true;
+            break;
 
+        case 'region':
+            register.get(command.guildId).region = command.options.getString('region').toUpperCase();
+            break;
 
         // case 'addtask':
         //     const task = ir.options.getString('task');
