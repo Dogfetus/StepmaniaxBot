@@ -1,7 +1,9 @@
+import {iso8061RightNow} from "./Utils/iso8601Time.js";
+
 // this is the map with all the servers along with their config
 let register = new Map();
 // to keep track of the last printed value from score feed
-export let lastUpdate = "111";
+export let lastUpdate = iso8061RightNow();
 
 // this is the config class (each server will have their own instance)
 class Config {

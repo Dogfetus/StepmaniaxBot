@@ -7,16 +7,15 @@ import fs from 'fs';
 export async function GetHistory(){
     const filePath = '/home/Pinestone/Documents/Stepmania/Stepmania/example.json';
 
-    try {
-        const jsonData = fs.readFileSync(filePath, 'utf-8');
-        const data = JSON.parse(jsonData);
-        console.log(data);
-        return data;
+    // try {
+    //     const jsonData = fs.readFileSync(filePath, 'utf-8');
+    //     const data = JSON.parse(jsonData);
+    //     return data;
 
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
+    // } catch (error) {
+    //     console.error(error);
+    //     return null;
+    // }
 
 
 

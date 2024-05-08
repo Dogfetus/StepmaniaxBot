@@ -18,6 +18,8 @@ import register from '../config.js';
  */
 
 
+// must now add enable/disable commands as well as region selector and such
+
 export const commands = [
     {
         name: 'updatehistory',

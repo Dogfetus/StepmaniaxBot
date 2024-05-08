@@ -66,7 +66,7 @@ export const scoreFeedEmbed = (scorefeed) => {
                     { name: 'Level', value: scorefeed.song.difficulty.toString(), inline: true },
                     { name: 'Times played', value: scorefeed.song.play_count.toString(), inline: true })
         .setImage(process.env.EP_BASE + scorefeed.song.cover_thumb)
-        .setThumbnail(process.env.EP_BASE + scorefeed.user.username)
+        .setThumbnail(process.env.EP_BASE + scorefeed.user.picture)
         .setFooter({text: createdTime[1] + " " + createdTime[2] + " " + createdTime[4], iconURL: process.env.EP_BASE + scorefeed.song.cover_thumb});
         // .setTimestamp();
 }
