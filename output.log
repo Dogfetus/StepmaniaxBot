@@ -1,0 +1,83 @@
+[
+  {
+    name: 'updatehistory',
+    description: 'Updates history',
+    options: [ [Object] ]
+  },
+  { name: 'disable', description: 'Disable the bot in the server' },
+  { name: 'enable', description: 'Enable the bot in the server' },
+  {
+    name: 'region',
+    description: 'change region using ISO 3166-1 alpha-2 format',
+    options: [ [Object] ]
+  },
+  {
+    name: 'pingrole',
+    description: 'starts pinging the given role when someone is playing',
+    options: [ [Object] ]
+  }
+]
+Ready!
+Registered slash command: updatehistory
+Registered slash command: disable
+Registered slash command: enable
+Registered slash command: region
+Registered slash command: pingrole
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 36864
+Next update in: 36864
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 30649
+Next update in: 30649
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 37505
+Next update in: 37505
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 30220
+Next update in: 30220
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 38344
+Next update in: 38344
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 28603
+Next update in: 28603
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 32089
+Next update in: 32089
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 29038
+Next update in: 29038
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 33232
+Next update in: 33232
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 32707
+Next update in: 32707
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 38359
+Next update in: 38359
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 40485
+Next update in: 40485
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 36948
+Next update in: 36948
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 38272
+Next update in: 38272
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 28062
+Next update in: 28062
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 35604
+Next update in: 35604
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 37068
+Next update in: 37068
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 28139
+Next update in: 28139
+dd87aaff8b06efabff0f5d09665751cadb53653e15873
+sending: 32906
+Next update in: 32906
+dd87aaff8b06efabff0f5d09665751cadb53653e15873

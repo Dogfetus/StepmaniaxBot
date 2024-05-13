@@ -11,6 +11,7 @@ class Config {
         this.channel = 0;
         this.region = "";
         this.enabled = true;
+        this.roles = [];
     }
 }
 

@@ -17,16 +17,22 @@ export default async function startInterval(client, time) {
 
 
     // loops through the json data from stempaniax and creates an embed for each entry (stops at 10 entries)
+    // since discord cant send more than 10 embeds at a time (not necessary either(yes ik i can send one at a time))
     for (let index = 0; (index < historyJson.history.length) && (embeds.length < 10); index++) {
             let scorefeed = new scoreFeedElement();
             scorefeed.parseJsonToValues(historyJson, index); 
-
-            if (lastUpdate                                                                      // last update exists
-                && iso8061ToEpoch(lastUpdate) >= iso8061ToEpoch(scorefeed.created_at))           // last update is newer than the current scorefeed
-                break;
-            else if (scorefeed.user.country == "NO")                                              // the scorefeed is from Norway            )
-                embeds.push(scoreFeedEmbed(scorefeed));
-    }
+            try {
+                if (lastUpdate                                                                     // last update exists
+                    && iso8061ToEpoch(lastUpdate) >= iso8061ToEpoch(scorefeed.created_at))         // last update is newer than the current scorefeed
+                    break;
+                else if (scorefeed.user.country == "NO" ||                                         // the scorefeed is from Norway
+                        scorefeed.user.country == "SJ" ||                                          // the scorefeed is from Svalbard
+                        scorefeed.smx_system_id == 762)                                            // the scorefeed is from the Norwegian system
+                    embeds.push(scoreFeedEmbed(scorefeed));
+            } catch(e){
+                console.log(e);
+            }
+        }
 
 
 

@@ -49,7 +49,20 @@ export const commands = [
                 required: true
             }
         ]
+    },
+    {
+        name: 'pingrole',
+        description: 'starts pinging the given role when someone is playing',
+        options: [
+            {
+                name: 'role',
+                description: 'The role that will be pinged',
+                type: 8,
+                required: true
+            }
+        ]
     }
+
     // {
     //     name: 'removetask',
     //     description: 'Deletes a task from the to-do list',
@@ -115,6 +128,10 @@ export async function handleCommand(command){
 
         case 'region':
             register.get(command.guildId).region = command.options.getString('region').toUpperCase();
+            break;
+
+        case 'pingrole':
+            register.get(command.guildId).roles.push(command.options.getRole('role'));
             break;
 
         // case 'addtask':

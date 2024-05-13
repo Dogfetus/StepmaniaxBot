@@ -26,6 +26,7 @@ export default class scoreFeedElement {
         this.smx_system_id  = 0;
         this.steps          = 0;
         this.difficulty     = 0;
+        this.id             = 0;
     }
 
     parseJsonToValues(json, historyID){
@@ -59,5 +60,6 @@ export default class scoreFeedElement {
         this.smx_system_id  = history.smxsystem_id;
         this.steps          = history.steps;
         this.difficulty     = history.difficulty_name;
+        this.id             = history.id;
     }
 }
