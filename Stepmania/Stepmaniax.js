@@ -21,7 +21,7 @@ export async function GetHistory(){
 
 
 
-    console.log(process.env.AuthGamerToken);
+    // console.log(process.env.AuthGamerToken);
     let returnData = null;
     const url = process.env.EP_HISTORY;
     const body = {
