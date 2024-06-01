@@ -27,5 +27,8 @@ export default class user {
         this.picture        = user.picture_path || defaultPFP;
         this.description    = user.description;
         this.rival          = user.rival;
+
+        // console.log(user.picture_path);
+
     }
 }
