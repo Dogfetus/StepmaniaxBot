@@ -56,17 +56,19 @@ export const scoreFeedEmbed = (scorefeed) => {
     }
 
     return new EmbedBuilder()
-        .setTitle(scorefeed.song?.title)
-        .setDescription(scorefeed.song?.artist + ' (' + scorefeed.song?.bpm + ' BPM)')
+        .setTitle(scorefeed.user.username)
+        .setDescription(scorefeed.song?.title + ": " + scorefeed.score?.toString())
         .setColor(embedColor)
-        .setAuthor({name: scorefeed.user.username, iconURL: process.env.EP_BASE + scorefeed.user.picture,  url: process.env.EP_SCORE_BASE + scorefeed.id})
+        .setAuthor({name: scorefeed.song?.artist, iconURL: process.env.EP_BASE + scorefeed.song?.cover_thumb,  url: process.env.EP_SCORE_BASE + scorefeed.id})
+        .addFields({ name: 'Details ', value:   scorefeed.song?.bpm + ' BPM'},
+                   { name: '\u200B', value: '\u200B' })
         .addFields({ name: 'Score', value: scorefeed.score?.toString()},
                    { name: '\u200B', value: '\u200B' })
         .addFields({ name: 'Difficulty', value: scorefeed.difficulty,  inline: true },
                     { name: 'Level', value: scorefeed.song.difficulty?.toString(), inline: true },
                     { name: 'SmxMachine', value: scorefeed.smx_system_id?.toString(), inline: true })
-        .setImage(process.env.EP_BASE + scorefeed.song?.cover_thumb)
-        .setThumbnail(process.env.EP_BASE + scorefeed.user?.picture)
+        .setImage(process.env.EP_SCORE_BASE + '/image/' + scorefeed.id)
+        .setThumbnail(process.env.EP_BASE + scorefeed.user?.picture || process.env.defaultPFP)
         .setFooter({text: createdTime[1] + " " + createdTime[2] + " " + createdTime[4], iconURL: process.env.EP_BASE + scorefeed.song?.cover_thumb});
         // .setTimestamp();
         // .addFields({ name: 'Perfect!!', value: scorefeed.perfect.toString(),  inline: true },

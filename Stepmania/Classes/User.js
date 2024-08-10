@@ -1,4 +1,3 @@
-const defaultPFP = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplay-lh.googleusercontent.com%2FIGrv9CKM_O2r18dXGvN1cdXcPJq7Hg-8E-8Hi1VcxnVkYi3idEr94u5DAI36lYk_&f=1&nofb=1&ipt=c63c5e250eb165818eeea6a925e2d078ade6b043d1dfccda46faca999caa5b5e&ipo=images";
 
 export default class user {
     constructor() {
@@ -24,7 +23,7 @@ export default class user {
         this.username       = user.username;
         this.country        = user.country;
         this.hex_color      = user.hex_color;
-        this.picture        = user.picture_path || defaultPFP;
+        this.picture        = user.picture_path;
         this.description    = user.description;
         this.rival          = user.rival;
 
