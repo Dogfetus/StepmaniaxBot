@@ -1,3 +1,3 @@
-# StepmaniaxBot
+# SBot
 
 just for run
