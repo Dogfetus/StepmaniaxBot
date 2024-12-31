@@ -26,4 +26,4 @@ This project generates Discord embeds for StepManiaX (SMX) gameplay results, dis
    ```
 
 ## Example Embed
-![Example Embed](https://cdn.discordapp.com/attachments/690300082662277161/1319473443879784508/image.png?ex=676616e7&is=6764c567&hm=eef9bf81e41ea78957037dfb9c04a81434c955b01cca2ccb00717856e876aa38&)
+![Example Embed](./Docs/image.png)
