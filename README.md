@@ -15,14 +15,10 @@ This project generates Discord embeds for StepManiaX (SMX) gameplay results, dis
    git clone <repository_url>
    cd <repository_directory>
    ```
-2. **Install Dependencies**:  
+2. **Configure**: Update `.env` with your Discord bot token.
+3. **Run**:  
    ```bash
-   npm install
-   ```
-3. **Configure**: Update `config.js` with your Discord bot token.
-4. **Run**:  
-   ```bash
-   ./start.sh
+   docker compose up -d
    ```
 
 ## Example Embed
