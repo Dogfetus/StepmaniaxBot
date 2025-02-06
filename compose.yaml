@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  stepbot:
+    build: .
+    container_name: stepbot
+    restart: always  # Ensures it restarts if it crashes
+    volumes:
+      - .:/app  # Mounts the project folder
+    environment:
+      - NODE_ENV=production
+

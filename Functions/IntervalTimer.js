@@ -4,6 +4,7 @@ import scoreFeedElement from '../Stepmania/Classes/ScoreFeedElement.js';
 import { GetHistory } from '../Stepmania/Stepmaniax.js';
 import iso8061ToEpoch, {iso8061RightNow} from '../Utils/iso8601Time.js';
 import register, {lastUpdate, updateTime} from '../config.js'
+import { SlashCommandRoleOption } from "discord.js";
 
 
 
@@ -28,8 +29,10 @@ export default async function startInterval(client, time) {
                         break;
                     else if (scorefeed.user.country == "NO" ||                                         // the scorefeed is from Norway
                             scorefeed.user.country == "SJ" ||                                          // the scorefeed is from Svalbard
-                            scorefeed.smx_system_id == 762)                                            // the scorefeed is from the Norwegian system
-                        embeds.push(scoreFeedEmbed(scorefeed));
+                            scorefeed.smx_system_id == 762){                                           // the scorefeed is from the Norwegian system
+                                embeds.push(scoreFeedEmbed(scorefeed));
+                                console.log(scorefeed);
+                        }
                 } catch(e){
                     console.log(e);
                 }
