@@ -15,7 +15,7 @@ This project generates Discord embeds for StepManiaX (SMX) gameplay results, dis
    git clone <repository_url>
    cd <repository_directory>
    ```
-2. **Configure**: Update `.env` with your Discord bot token.
+2. **Configure**: `.env` needs tokens (will update later)
 3. **Run**:  
    ```bash
    docker compose up -d
