@@ -6,5 +6,5 @@ export default function iso8061ToEpoch(time){
 
 export function iso8061RightNow(){
     const now = new Date();
-    return now.toISOString();
+    return now.toString().replace(/\s*\(.*\)$/, '');
 }

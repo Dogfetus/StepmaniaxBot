@@ -3,9 +3,11 @@ services:
   stepbot:
     build: .
     container_name: stepbot
-    restart: always  # Ensures it restarts if it crashes
+    restart: always  
     volumes:
-      - .:/app  # Mounts the project folder
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro	
+      - .:/app
     environment:
       - NODE_ENV=production
 
