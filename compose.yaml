@@ -10,4 +10,5 @@ services:
       - .:/app
     environment:
       - NODE_ENV=production
+      - TZ=${TZ}
 
